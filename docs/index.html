@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Shower Presentation Engine</title>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+</head>
+<body class="shower list">
+
+	<header class="caption">
+		<h1>Destructuring in JavaScript</h1>
+	</header>
+
+	<section class="slide" id="cover">
+		<h2>Destructuring in</h2>
+		<figure>
+			<img class="cover" src="pictures/bg.png" >
+		</figure>
+		<style>
+			 #cover h2 {
+				margin:30px 0 0;
+				font-size:70px;
+				color: #000;
+				}
+				#cover .cover {
+					max-height: none;
+				}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>What is it?</h2>
+		<p>The <strong>destructuring assignment</strong> syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.</p>
+		<ul class="next">
+			<li>Array destructuring</li>
+			<li>Object destructuring</li>
+		</ul>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Basic variable assignment</p>
+		<pre>
+			<code>const iterable = ['a', 'b'];</code>
+			<code>const [x, y] = iterable;</code>
+			<code>console.log(x);<span class="comment next"> // 'a'</span></code>
+			<code>console.log(y);<span class="comment next"> // 'b'</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Assignment separate from declaration</p>
+		<pre>
+			<code>const [a, b] = [1, 2];</code>
+			<code>console.log(a);<span class="comment next"> // 1</span></code>
+			<code>console.log(b);<span class="comment next"> // 2</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Default values</p>
+		<pre>
+			<code>[a=5, b=7, c] = [1];</code>
+			<code>console.log(a);<span class="comment next"> // 1</span></code>
+			<code>console.log(b);<span class="comment next"> // 7</span></code>
+			<code>console.log(c);<span class="comment next"> // undefined</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Swapping variables (without destructuring)</p>
+		<pre>
+			<code>let one = 'first';</code>
+			<code>let two = 'second';</code>
+			<span class="next">
+				<code>let temp = one;</code>
+				<code>one = two;</code>
+				<code>two = temp;</code>
+				<code>console.log(one);<span class="comment"> // 'second'</span></code>
+				<code>console.log(two);<span class="comment"> // 'first'</span></code>
+			</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Swapping variables (with destructuring)</p>
+		<pre>
+			<code>let one = 'first';</code>
+			<code>let two = 'second';</code>
+			<span class="next">
+				<code>[two, one] = [one, two];</code>
+				<code>console.log(one);<span class="comment"> // 'second'</span></code>
+				<code>console.log(two);<span class="comment"> // 'first'</span></code>
+			</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Parsing an array returned from a function</p>
+		<pre>
+			<code>const f = () => [1,2];</code>
+			<code>const [a, b] = f();</code>
+			<span class="next">
+				<code>console.log(a);<span class="comment next"> // 1</span></code>
+				<code>console.log(b);<span class="comment next"> // 2</span></code>
+			</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Ignoring some returned values</p>
+		<pre>
+			<code>const f = () => [1,2,3,4,5];</code>
+			<code>const [a, , , , b] = f();</code>
+			<span class="next">
+				<code>console.log(a);<span class="comment next"> // 1</span></code>
+				<code>console.log(b);<span class="comment next"> // 5</span></code>
+			</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Assigning the rest of an array to a variable</p>
+		<pre>
+			<code>const [a, b, ...rest] = [10, 20, 30, 40, 50];</code>
+			<code>console.log(a);<span class="comment next"> // 10</span></code>
+			<code>console.log(b);<span class="comment next"> // 20</span></code>
+			<code>console.log(rest);<span class="comment next"> // [30, 40, 50]</span></code>
+		</pre>
+	</section>
+
+
+
+	<section class="slide">
+		<h2>Object destructuring</h2>
+		<p>Basic assignment</p>
+		<pre>
+			<code>const obj = { p: 42, q: true };</code>
+			<code>const { p, q } = obj;</code>
+			<code>console.log(p);<span class="comment next"> // 42</span></code>
+			<code>console.log(q);<span class="comment next"> // true</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Object destructuring</h2>
+		<p>Assignment without declaration</p>
+		<pre>
+			<code>const { a, b } = { a: 1, b: 2 };</code>
+			<code>console.log(a);<span class="comment next"> // 1</span></code>
+			<code>console.log(b);<span class="comment next"> // 2</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Object destructuring</h2>
+		<p>Assigning to new variable names</p>
+		<pre>
+			<code>const { a: foo, b: bar } = { a: 1, b: 2 };</code>
+			<code>console.log(a); <mark class="important next">Uncaught ReferenceError: a is not defined</mark></code>
+			<code>console.log(b); <mark class="important next">Uncaught ReferenceError: b is not defined</mark></code>
+			<code class="next">console.log(foo);<span class="comment"> // 1</span></code>
+			<code class="next">console.log(bar);<span class="comment"> // 2</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Object destructuring</h2>
+		<p>Default values</p>
+		<pre>
+			<code>const { a = 10, b = 5 } = { a: 3 };</code>
+			<code>console.log(a);<span class="comment next"> // 3</span></code>
+			<code>console.log(b);<span class="comment next"> // 5</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Object destructuring</h2>
+		<p>Assigning to new variables names and providing default values</p>
+		<pre>
+			<code>const { a:aa = 10, b:bb = 5 } = { a: 3 };</code>
+			<code>console.log(aa);<span class="comment next"> // 3</span></code>
+			<code>console.log(bb);<span class="comment next"> // 5</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout shrink">Where can destructuring be used? </h2>
+	</section>
+
+	<section class="slide">
+		<h2>Setting a function parameter's default value (ES5 version)</h2>
+		<pre class="next small-text">
+			<code>function drawES5Chart(options) {</code>
+			<code class="next">  options = options === undefined ? {} : options;</code>
+			<span class="next">
+				<code>  var size = options.size === undefined ? 'big' : options.size;</code>
+				<code>  var cords = options.cords === undefined ? {x: 0, y: 0} : options.cords;</code>
+				<code>  var radius = options.radius === undefined ? 25 : options.radius;</code>
+			</span>
+			<code class="next"><span class="comment">  // now finally do some chart drawing</span></code>
+			<code>}</code>
+		</pre>
+		<style>
+			.small-text {
+				font-size: 20px;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Setting a function parameter's default value (ES2015 version)</h2>
+		<pre class="next small-text">
+			<code>function drawES2015Chart() {</code>
+				<code>&nbsp;</code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Setting a function parameter's default value (ES2015 version)</h2>
+		<pre class="small-text">
+			<code>function drawES2015Chart({size='big', cords={x: 0, y: 0}, radius=25} = {}) {</code>
+				<code><span class="next comment">  // now finally do some chart drawing</span></code>
+			<code>}</code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Nested object and array destructuring</h2>
+		<pre class="very-small-text">
+			<code>const metadata = {</code>
+			<code>  title: 'a pen'</code>
+			<code>  translations: [</code>
+			<code>	  {</code>
+			<code>	    locale: 'de',</code>
+			<code>	    title: 'kugelschreiber',</code>
+			<code>	  }</code>
+			<code>  ]</code>
+			<code>}</code>
+			<code>const {title: englishTitle, translations: [{title: germanTitle}]} = metadata;</code>
+			<code>console.log(englishTitle);<span class="comment next"> // 'a pen'</span></code>
+			<code>console.log(germanTitle);<span class="comment next"> // 'kugelschreiber'</span></code>
+		</pre>
+		<style>
+			.very-small-text {
+				font-size: 18px;
+			}
+		</style>
+	</section>
+
+	<section class="slide">
+		<h2>Computed object property names and destructuring</h2>
+		<pre>
+			<code>let key = 'z';</code>
+			<code>let {[key]: foo} = {z: 'bar'};</code>
+			<code>console.log(foo);<span class="comment next"> // 'bar'</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Rest in Object Destructuring</h2>
+		<pre>
+			<code>let {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}</code>
+			<code>console.log(a);<span class="comment next"> // 10</span></code>
+			<code>console.log(b);<span class="comment next"> // 20</span></code>
+			<code>console.log(rest);<span class="comment next"> // let {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout shrink">Destrucruting is your BRO!</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Thank you!</h2>
+	</section>
+
+	<div class="progress"></div>
+
+	<script src="shower/shower.min.js"></script>
+	<!-- Copyright © 2018 Yours Truly, Famous Inc. -->
+
+</body>
+</html>
