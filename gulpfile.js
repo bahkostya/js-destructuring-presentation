@@ -7,7 +7,7 @@ const replace = require('gulp-replace');
 const rsync = require('gulp-rsync');
 const sequence = require('run-sequence');
 const zip = require('gulp-zip');
-const pages = require('gulp-gh-pages');
+const pages = require('gulp-gh-pages-will');
 const browserSync = require('browser-sync').create();
 
 gulp.task('prepare', () => {

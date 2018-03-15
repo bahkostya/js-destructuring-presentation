@@ -37,6 +37,7 @@
     "fs": "0.0.2",
     "gulp": "^3.9.1",
     "gulp-gh-pages": "^0.5.4",
+    "gulp-gh-pages-will": "^0.5.5",
     "gulp-rename": "^1.2.2",
     "gulp-replace": "^0.6.1",
     "gulp-rsync": "0.0.8",
