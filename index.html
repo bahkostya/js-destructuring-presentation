@@ -10,191 +10,280 @@
 <body class="shower list">
 
 	<header class="caption">
-		<h1>Shower Presentation Engine</h1>
-		<p>Yours Truly, Famous Inc.</p>
+		<h1>Destructuring in JavaScript</h1>
 	</header>
 
 	<section class="slide" id="cover">
-		<h2>Shower Presentation Engine</h2>
-		<p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
+		<h2>Destructuring in</h2>
 		<figure>
-			<img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
+			<img class="cover" src="pictures/bg.png" >
 		</figure>
 		<style>
-			#cover h2 {
+			 #cover h2 {
 				margin:30px 0 0;
-				color:#FFF;
-				text-align:center;
 				font-size:70px;
+				color: #000;
 				}
-			#cover p {
-				margin:10px 0 0;
-				text-align:center;
-				color:#FFF;
-				font-style:italic;
-				font-size:20px;
+				#cover .cover {
+					max-height: none;
 				}
-				#cover p a {
-					color:#FFF;
-					}
 		</style>
 	</section>
 
 	<section class="slide">
-		<h2>Shower key features</h2>
-		<ol>
-			<li>Built on HTML, CSS and vanilla JavaScript</li>
-			<li>Works in all modern browsers</li>
-			<li>Themes are separated from engine</li>
-			<li>Modular and extensible</li>
-			<li>Fully keyboard accessible</li>
-			<li>Printable to PDF</li>
-		</ol>
-		<p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+		<h2>What is it?</h2>
+		<p>The <strong>destructuring assignment</strong> syntax is a JavaScript expression that makes it possible to unpack values from arrays, or properties from objects, into distinct variables.</p>
+		<ul class="next">
+			<li>Array destructuring</li>
+			<li>Object destructuring</li>
+		</ul>
 	</section>
 
 	<section class="slide">
-		<h2>Plain text on your slides</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
-	</section>
-
-	<section class="slide">
-		<h2>Two columns if you like</h2>
-		<p class="double">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-	</section>
-
-	<section class="slide">
-		<h2>All kind of lists</h2>
-		<ol>
-			<li>Simple lists are marked with bullets</li>
-			<li>Ordered lists begin with a number</li>
-			<li>You can even nest lists one inside another
-				<ul>
-					<li>Or mix their types</li>
-					<li>But do not go too far</li>
-					<li>Otherwise audience will be bored</li>
-				</ul>
-			</li>
-			<li>Look, seven rows exactly!</li>
-		</ol>
-	</section>
-
-	<section class="slide">
-		<h2>Serious citations</h2>
-		<figure>
-			<blockquote>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-			</blockquote>
-			<figcaption>Marcus Tullius Cicero</figcaption>
-		</figure>
-	</section>
-
-	<section class="slide">
-		<h2>Code samples</h2>
+		<h2>Array destructuring</h2>
+		<p>Basic variable assignment</p>
 		<pre>
-			<code>&lt;!DOCTYPE html&gt;</code>
-			<code class="mark">&lt;html lang="en"&gt;</code>
-			<code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-			<code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-			<code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-			<code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-			<code><mark>&lt;/head&gt;</mark></code>
+			<code>const iterable = ['a', 'b'];</code>
+			<code>const [x, y] = iterable;</code>
+			<code>console.log(x);<span class="comment next"> // 'a'</span></code>
+			<code>console.log(y);<span class="comment next"> // 'b'</span></code>
 		</pre>
 	</section>
 
 	<section class="slide">
-		<h2>Even tables</h2>
-		<table>
-		<tr>
-			<th scope="col">Locavore</th>
-			<th>Umami</th>
-			<th>Helvetica</th>
-			<th>Vegan</th>
-		</tr>
-		<tr>
-			<th scope="row">Fingerstache</th>
-			<td>Kale</td>
-			<td>Chips</td>
-			<td>Keytar</td>
-		</tr>
-		<tr>
-			<th scope="row">Sriracha</th>
-			<td>Gluten-free</td>
-			<td>Ennui</td>
-			<td>Keffiyeh</td>
-		</tr>
-		<tr>
-			<th scope="row">Thundercats</th>
-			<td>Jean</td>
-			<td>Shorts</td>
-			<td>Biodiesel</td>
-		</tr>
-		<tr>
-			<th scope="row">Terry</th>
-			<td>Richardson</td>
-			<td>Swag</td>
-			<td>Blog</td>
-		</tr>
-		</table>
-		<p>It’s good to have information organized.</p>
+		<h2>Array destructuring</h2>
+		<p>Assignment separate from declaration</p>
+		<pre>
+			<code>const [a, b] = [1, 2];</code>
+			<code>console.log(a);<span class="comment next"> // 1</span></code>
+			<code>console.log(b);<span class="comment next"> // 2</span></code>
+		</pre>
 	</section>
 
-	<section class="slide" id="picture">
-		<h2>Pictures</h2>
-		<figure>
-			<img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-			<figcaption class="white">
-				<a href="http://fiftyfootshadows.net/">© John Carey</a>
-			</figcaption>
-		</figure>
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Default values</p>
+		<pre>
+			<code>[a=5, b=7, c] = [1];</code>
+			<code>console.log(a);<span class="comment next"> // 1</span></code>
+			<code>console.log(b);<span class="comment next"> // 7</span></code>
+			<code>console.log(c);<span class="comment next"> // undefined</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Swapping variables (without destructuring)</p>
+		<pre>
+			<code>let one = 'first';</code>
+			<code>let two = 'second';</code>
+			<span class="next">
+				<code>let temp = one;</code>
+				<code>one = two;</code>
+				<code>two = temp;</code>
+				<code>console.log(one);<span class="comment"> // 'second'</span></code>
+				<code>console.log(two);<span class="comment"> // 'first'</span></code>
+			</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Swapping variables (with destructuring)</p>
+		<pre>
+			<code>let one = 'first';</code>
+			<code>let two = 'second';</code>
+			<span class="next">
+				<code>[two, one] = [one, two];</code>
+				<code>console.log(one);<span class="comment"> // 'second'</span></code>
+				<code>console.log(two);<span class="comment"> // 'first'</span></code>
+			</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Parsing an array returned from a function</p>
+		<pre>
+			<code>const f = () => [1,2];</code>
+			<code>const [a, b] = f();</code>
+			<span class="next">
+				<code>console.log(a);<span class="comment next"> // 1</span></code>
+				<code>console.log(b);<span class="comment next"> // 2</span></code>
+			</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Ignoring some returned values</p>
+		<pre>
+			<code>const f = () => [1,2,3,4,5];</code>
+			<code>const [a, , , , b] = f();</code>
+			<span class="next">
+				<code>console.log(a);<span class="comment next"> // 1</span></code>
+				<code>console.log(b);<span class="comment next"> // 5</span></code>
+			</span>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Array destructuring</h2>
+		<p>Assigning the rest of an array to a variable</p>
+		<pre>
+			<code>const [a, b, ...rest] = [10, 20, 30, 40, 50];</code>
+			<code>console.log(a);<span class="comment next"> // 10</span></code>
+			<code>console.log(b);<span class="comment next"> // 20</span></code>
+			<code>console.log(rest);<span class="comment next"> // [30, 40, 50]</span></code>
+		</pre>
+	</section>
+
+
+
+	<section class="slide">
+		<h2>Object destructuring</h2>
+		<p>Basic assignment</p>
+		<pre>
+			<code>const obj = { p: 42, q: true };</code>
+			<code>const { p, q } = obj;</code>
+			<code>console.log(p);<span class="comment next"> // 42</span></code>
+			<code>console.log(q);<span class="comment next"> // true</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Object destructuring</h2>
+		<p>Assignment without declaration</p>
+		<pre>
+			<code>const { a, b } = { a: 1, b: 2 };</code>
+			<code>console.log(a);<span class="comment next"> // 1</span></code>
+			<code>console.log(b);<span class="comment next"> // 2</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Object destructuring</h2>
+		<p>Assigning to new variable names</p>
+		<pre>
+			<code>const { a: foo, b: bar } = { a: 1, b: 2 };</code>
+			<code>console.log(a); <mark class="important next">Uncaught ReferenceError: a is not defined</mark></code>
+			<code>console.log(b); <mark class="important next">Uncaught ReferenceError: b is not defined</mark></code>
+			<code class="next">console.log(foo);<span class="comment"> // 1</span></code>
+			<code class="next">console.log(bar);<span class="comment"> // 2</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Object destructuring</h2>
+		<p>Default values</p>
+		<pre>
+			<code>const { a = 10, b = 5 } = { a: 3 };</code>
+			<code>console.log(a);<span class="comment next"> // 3</span></code>
+			<code>console.log(b);<span class="comment next"> // 5</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Object destructuring</h2>
+		<p>Assigning to new variables names and providing default values</p>
+		<pre>
+			<code>const { a:aa = 10, b:bb = 5 } = { a: 3 };</code>
+			<code>console.log(aa);<span class="comment next"> // 3</span></code>
+			<code>console.log(bb);<span class="comment next"> // 5</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout shrink">Where can destructuring be used? </h2>
+	</section>
+
+	<section class="slide">
+		<h2>Setting a function parameter's default value (ES5 version)</h2>
+		<pre class="next small-text">
+			<code>function drawES5Chart(options) {</code>
+			<code class="next">  options = options === undefined ? {} : options;</code>
+			<span class="next">
+				<code>  var size = options.size === undefined ? 'big' : options.size;</code>
+				<code>  var cords = options.cords === undefined ? {x: 0, y: 0} : options.cords;</code>
+				<code>  var radius = options.radius === undefined ? 25 : options.radius;</code>
+			</span>
+			<code class="next"><span class="comment">  // now finally do some chart drawing</span></code>
+			<code>}</code>
+		</pre>
 		<style>
-			#picture h2 {
-				color:#FFF;
-				}
+			.small-text {
+				font-size: 20px;
+			}
 		</style>
 	</section>
 
 	<section class="slide">
-		<h2 class="shout shrink">You can even shout this way</h2>
+		<h2>Setting a function parameter's default value (ES2015 version)</h2>
+		<pre class="next small-text">
+			<code>function drawES2015Chart() {</code>
+				<code>&nbsp;</code>
+			<code>}</code>
+		</pre>
 	</section>
 
 	<section class="slide">
-		<h2>Inner navigation</h2>
-		<ol>
-			<li>Lets you reveal list items one by one</li>
-			<li class="next">To keep some key points</li>
-			<li class="next">In secret from audience</li>
-			<li class="next">But it will work only once</li>
-			<li class="next">Nobody wants to see the same joke twice</li>
-		</ol>
+		<h2>Setting a function parameter's default value (ES2015 version)</h2>
+		<pre class="small-text">
+			<code>function drawES2015Chart({size='big', cords={x: 0, y: 0}, radius=25} = {}) {</code>
+				<code><span class="next comment">  // now finally do some chart drawing</span></code>
+			<code>}</code>
+		</pre>
 	</section>
 
-	<section class="slide grid">
-		<h2>All nicely aligned to grid</h2>
-	</section>
-
-	<section class="slide" id="see-more">
-		<h2 class="shout">
-			<img src="pictures/logo.svg" alt="Shower logo">
-			<a href="https://github.com/shower/shower">See more on GitHub</a>
-		</h2>
+	<section class="slide">
+		<h2>Nested object and array destructuring</h2>
+		<pre class="very-small-text">
+			<code>const metadata = {</code>
+			<code>  title: 'a pen'</code>
+			<code>  translations: [</code>
+			<code>	  {</code>
+			<code>	    locale: 'de',</code>
+			<code>	    title: 'kugelschreiber',</code>
+			<code>	  }</code>
+			<code>  ]</code>
+			<code>}</code>
+			<code>const {title: englishTitle, translations: [{title: germanTitle}]} = metadata;</code>
+			<code>console.log(englishTitle);<span class="comment next"> // 'a pen'</span></code>
+			<code>console.log(germanTitle);<span class="comment next"> // 'kugelschreiber'</span></code>
+		</pre>
 		<style>
-			#see-more h2 {
-				font-size:100px
-				}
-			#see-more img {
-				width:0.72em;
-				height:0.72em;
-				}
+			.very-small-text {
+				font-size: 18px;
+			}
 		</style>
 	</section>
 
-	<footer class="badge">
-		<a href="https://github.com/shower/shower">Fork me on GitHub</a>
-	</footer>
+	<section class="slide">
+		<h2>Computed object property names and destructuring</h2>
+		<pre>
+			<code>let key = 'z';</code>
+			<code>let {[key]: foo} = {z: 'bar'};</code>
+			<code>console.log(foo);<span class="comment next"> // 'bar'</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2>Rest in Object Destructuring</h2>
+		<pre>
+			<code>let {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}</code>
+			<code>console.log(a);<span class="comment next"> // 10</span></code>
+			<code>console.log(b);<span class="comment next"> // 20</span></code>
+			<code>console.log(rest);<span class="comment next"> // let {a, b, ...rest} = {a: 10, b: 20, c: 30, d: 40}</span></code>
+		</pre>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout shrink">Destrucruting is your BRO!</h2>
+	</section>
+
+	<section class="slide">
+		<h2 class="shout">Thank you!</h2>
+	</section>
 
 	<div class="progress"></div>
 
